@@ -7,7 +7,7 @@ public class PlayStoreMain {
     	
     	PlayStore store = new PlayStore();
                 
-        // new publications
+        // Adding new publications
         String[] authors1 = {"L. Tolstoy"};
         Book b1 = new Book ("b1", "War and Peace", 12.55, "The Russian Messenger", 1225, authors1);
                 
@@ -25,10 +25,11 @@ public class PlayStoreMain {
         //store.addContent(b3);
         //store.addContent(m1);
                 
-                
+        
+        // Adding new applications
         Application g1 = new Application("g1", "Pokemon", 5.3, "androidV4");    
         Application g2 = new Application("g2", "Pokemon", 5, "iOSV10");
-        //a free app
+        // a free app
         Application app1 = new Application("app1", "Calendar", "androidV3"); 
 
                 
@@ -37,7 +38,7 @@ public class PlayStoreMain {
         store.addContent(app1);
                 
                 
-        // Adding new users
+        // Adding new users and comments
         User u1 = new User("u1", "John Doe", "0412000", 200);
         User u2 = new User("u2", "Mary Poppins", "0433191");  
         User u3 = new User("u3", "Dave Smith", "0413456", 1000);
@@ -68,7 +69,6 @@ public class PlayStoreMain {
         u4.buyContent(g1);
         u4.becomePremium();
         u4.buyContent(m1);
-
 
         u2.becomePremium();
         u2.buyContent(b1);
