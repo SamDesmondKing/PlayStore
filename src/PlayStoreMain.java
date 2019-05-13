@@ -3,8 +3,22 @@ public class PlayStoreMain {
 	
 	public static void main(String[] args) {
         
-  
-    
+		User myUser = new User("u1", "Jane", "00999", 200);
+		
+		Comment comment = new Comment(myUser, "This is cool");
+		
+		Application myApp = new Application("This works", "CoolAppName", 5.3, "android");
+		
+		// String ID, String name, double price, String publisher, int numPages
+		
+		String[] authors = {"Sam King"};
+		
+		Book myBook = new Book("bookID", "bookName", 5.6, "bookPublisher", 6, authors);
+		
+		
+		String[] getAuthors = myBook.getAuthors();
+		
+		System.out.println(getAuthors[0]);
     
     	
     	/*

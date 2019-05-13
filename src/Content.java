@@ -8,9 +8,16 @@ public abstract class Content {
 	private double price;
 	private ArrayList<Comment> reviews = new ArrayList<Comment>();
 	
-	public Content() {
+	public Content(String ID, String name, double price) {
 		
+		this.ID = ID;
+		this.name = name;
+		this.price = price;
 		
+	}
+	
+	public String getID() {
+		return this.ID;
 	}
 	
 }

@@ -1,11 +1,11 @@
 
-public class Magazine extends Publication {
+//public class Magazine extends Publication {
 
-	private int volume;
+	//private int volume;
 	
-	public Magazine() {
+	//public Magazine() {
 		
 		
-	}
+	//}
 
-}
+//}
