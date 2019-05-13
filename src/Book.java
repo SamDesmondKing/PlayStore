@@ -10,7 +10,6 @@ public class Book extends Publication {
 		
 		this.authors = authors;
 		
-		
 	}
 	
 	public String[] getAuthors() {

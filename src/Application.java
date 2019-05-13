@@ -9,5 +9,12 @@ public class Application extends Content {
 		this.OSType = OSType;
 		
 	}
+	
+	public Application(String ID, String name, String OSType) {
+		
+		super(ID, name);
+		this.OSType = OSType;
+		
+	}
 
 }

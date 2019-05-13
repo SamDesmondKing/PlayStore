@@ -2,27 +2,8 @@ public class PlayStoreMain {
 	
 	
 	public static void main(String[] args) {
-        
-		User myUser = new User("u1", "Jane", "00999", 200);
-		
-		Comment comment = new Comment(myUser, "This is cool");
-		
-		Application myApp = new Application("This works", "CoolAppName", 5.3, "android");
-		
-		// String ID, String name, double price, String publisher, int numPages
-		
-		String[] authors = {"Sam King"};
-		
-		Book myBook = new Book("bookID", "bookName", 5.6, "bookPublisher", 6, authors);
-		
-		
-		String[] getAuthors = myBook.getAuthors();
-		
-		System.out.println(getAuthors[0]);
-    
-    	
-    	/*
-    	
+       
+   
     	PlayStore store = new PlayStore();
                 
         // Adding new publications
@@ -36,36 +17,18 @@ public class PlayStoreMain {
         Book b3 = new Book ("b3", "Introduction to algorithms", 100, "MIT Press", 1312, authors3);
                 
         Magazine m1 = new Magazine("m1", "Forbes", 8.99, "Forbes Media", 50, 201904);
-                
-                
-        //store.addContent(b1);
-        //store.addContent(b2);
-        //store.addContent(b3);
-        //store.addContent(m1);
-                
-        
+       
         // Adding new applications
         Application g1 = new Application("g1", "Pokemon", 5.3, "androidV4");    
         Application g2 = new Application("g2", "Pokemon", 5, "iOSV10");
         // a free app
         Application app1 = new Application("app1", "Calendar", "androidV3"); 
-
-                
-        store.addContent(g1);
-        store.addContent(g2);
-        store.addContent(app1);
-                
-                
-        // Adding new users and comments
+        
+     // Adding new users and comments
         User u1 = new User("u1", "John Doe", "0412000", 200);
         User u2 = new User("u2", "Mary Poppins", "0433191");  
         User u3 = new User("u3", "Dave Smith", "0413456", 1000);
         User u4 = new User("u4", "Jackie Chan", "0417654");
-                
-        store.addUser(u1);
-        store.addUser(u2);
-        store.addUser(u3);
-        store.addUser(u4);
         
         Comment comment1 = new Comment(u1, "This is a fantastic game!");
         g1.addReview(comment1);
@@ -77,6 +40,24 @@ public class PlayStoreMain {
  
         b1.addReview(new Comment(u2, "I love Tolstoy!"));
 
+        
+    	/*
+                
+        store.addContent(b1);
+        store.addContent(b2);
+        store.addContent(b3);
+        store.addContent(m1);
+                
+        store.addContent(g1);
+        store.addContent(g2);
+        store.addContent(app1);
+                
+        store.addUser(u1);
+        store.addUser(u2);
+        store.addUser(u3);
+        store.addUser(u4);
+        
+    
                                 
         // Simulating transactions, showing content, comments etc etc.  
         // They can be driven by menu input as well.
