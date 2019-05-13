@@ -1,17 +1,12 @@
 //You may need the following packages
 //import java.util.Hashtable;
-//import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class PlayStore {
 	
-	// Instance variables that you need.
-	// They must all be marked as private
+	private ArrayList<Content> contents = new ArrayList<Content>();
+	private ArrayList<User> users = new ArrayList<User>();
 	
-	// Declare a private variable (array or similar) to store your Content objects here
-	
-	// Declare a private variable (array or similar) to store your User objects here
-	
-	/*
 	
 	public PlayStore() {
 		// any code you need here
@@ -31,6 +26,5 @@ public class PlayStore {
 	
 	// possible methods here
 
-
-	 */	
+	 	
 }
