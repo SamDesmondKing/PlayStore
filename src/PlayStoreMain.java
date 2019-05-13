@@ -40,6 +40,9 @@ public class PlayStoreMain {
  
         b1.addReview(new Comment(u2, "I love Tolstoy!"));
 
+        store.showContent();
+        
+        g1.showComments();
         
     	/*
                 
@@ -57,7 +60,6 @@ public class PlayStoreMain {
         store.addUser(u3);
         store.addUser(u4);
         
-    
                                 
         // Simulating transactions, showing content, comments etc etc.  
         // They can be driven by menu input as well.
@@ -72,11 +74,7 @@ public class PlayStoreMain {
         u2.becomePremium();
         u2.buyContent(b1);
         u2.buyContent(g1);
-
-
-        store.showContent();
         
-        g1.showReviews();
                 
         // to do: call a method to show all content items of a particular type, e.g. book, magazine, application.
         

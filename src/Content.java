@@ -42,7 +42,7 @@ public abstract class Content {
 		
 		for (int i = 0; i < this.reviews.size(); i++) {
 			
-			System.out.println(this.reviews.get(i));
+			System.out.println(this.reviews.get(i).getComment());
 		}
 	}
 	

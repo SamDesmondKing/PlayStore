@@ -11,4 +11,8 @@ public class Comment {
 		
 	}
 	
+	public String getComment() {
+		return this.comment;
+	}
+	
 }
