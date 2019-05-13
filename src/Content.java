@@ -4,19 +4,17 @@ public abstract class Content {
 
 	private String ID;
 	private String name;
-	private int numDownloads;
+	private int downloads;
 	private double price;
 	private ArrayList<Comment> reviews = new ArrayList<Comment>();
 	
 	public Content(String ID, String name, double price) {
-		
 		this.ID = ID;
 		this.name = name;
 		this.price = price;
 	}
 	
 	public Content (String ID, String name) {
-		
 		this.ID = ID;
 		this.name = name;
 	}
@@ -33,17 +31,22 @@ public abstract class Content {
 		return this.name;
 	}
 	
+	public int getDownloads() {
+		return this.downloads;
+	}
+	
 	public void addReview(Comment comment) {
-		
 		this.reviews.add(comment);
 	}
 	
 	public void showComments() {
-		
 		for (int i = 0; i < this.reviews.size(); i++) {
-			
 			System.out.println(this.reviews.get(i).getComment());
 		}
+	}
+	
+	public void addDownload() {
+		this.downloads++;
 	}
 	
 }

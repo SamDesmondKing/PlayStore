@@ -7,7 +7,6 @@ public class PlayStore {
 	private ArrayList<Content> contents = new ArrayList<Content>();
 	private ArrayList<User> users = new ArrayList<User>();
 	
-	
 	public PlayStore() {
 		// any code you need here
 	}
