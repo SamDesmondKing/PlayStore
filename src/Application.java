@@ -14,5 +14,7 @@ public class Application extends Content {
 		this.OSType = OSType;
 		
 	}
+	
+	
 
 }

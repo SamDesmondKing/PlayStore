@@ -73,7 +73,7 @@ public class User {
 	}
 
 	//Iterates through the content array of this user and print the names of the content
-	public void showContent() {
+	public void showContentBought() {
 		for (int i = 0; i < contentBought.size(); i++) {
 			System.out.println(contentBought.get(i).getName());
 		}

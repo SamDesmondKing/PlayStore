@@ -35,10 +35,12 @@ public abstract class Content {
 		return this.downloads;
 	}
 	
+	//Adds comment (review) to this content's comment array list
 	public void addReview(Comment comment) {
 		this.reviews.add(comment);
 	}
 	
+	//Iterates through the comment array list of this content object and prints the comments
 	public void showComments() {
 		for (int i = 0; i < this.reviews.size(); i++) {
 			System.out.println(this.reviews.get(i).getComment());

@@ -3,7 +3,8 @@ public class PlayStoreMain {
 	public static void main(String[] args) {
 
 		PlayStore store = new PlayStore();
-
+		
+		
 		// Adding new publications
 		String[] authors1 = { "L. Tolstoy" };
 		Book b1 = new Book("b1", "War and Peace", 12.55, "The Russian Messenger", 1225, authors1);
@@ -22,6 +23,18 @@ public class PlayStoreMain {
 		// a free app
 		Application app1 = new Application("app1", "Calendar", "androidV3");
 
+		
+		 store.addContent(b1); store.addContent(b2); store.addContent(b3);
+		 store.addContent(m1);
+		 store.addContent(g1); store.addContent(g2); store.addContent(app1);
+		
+		 
+		//Needs work - not working yet.
+		store.showApplicationContent("class Application");
+		
+		store.showContent();
+		
+		
 		// Adding new users and comments
 		User u1 = new User("u1", "John Doe", "0412000", 200);
 		User u2 = new User("u2", "Mary Poppins", "0433191");
@@ -57,7 +70,7 @@ public class PlayStoreMain {
 		}
 		
 
-		System.out.println(m1.getDownloads());
+		//System.out.println(m1.getDownloads());
 
 		//u1.showContent();
 		
@@ -70,7 +83,6 @@ public class PlayStoreMain {
 		 * 
 		 * store.addContent(b1); store.addContent(b2); store.addContent(b3);
 		 * store.addContent(m1);
-		 * 
 		 * store.addContent(g1); store.addContent(g2); store.addContent(app1);
 		 * 
 		 * store.addUser(u1); store.addUser(u2); store.addUser(u3); store.addUser(u4);
