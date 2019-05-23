@@ -70,11 +70,6 @@ public class PlayStoreMain {
 		}
 		
 
-<<<<<<< HEAD
-=======
-		//System.out.println(m1.getDownloads());
-
->>>>>>> d2a9e01486704d1390d00e32082434ec0582b407
 		//u1.showContent();
 		
 
