@@ -10,6 +10,7 @@ public class User {
 	ArrayList<Content> contentBought = new ArrayList<Content>();
 
 	// Do we need to be able to search a user's comment history?
+	// Should becomePremium throw a purchase exception?
 
 	//Constructor 1
 	public User(String ID, String name, String phoneNumber, double account) {

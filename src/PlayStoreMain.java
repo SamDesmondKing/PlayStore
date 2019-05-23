@@ -57,8 +57,6 @@ public class PlayStoreMain {
 		}
 		
 
-		System.out.println(m1.getDownloads());
-
 		//u1.showContent();
 		
 
