@@ -68,9 +68,7 @@ public class PlayStoreMain {
 
 			try {
 
-				System.out.println(
-						"\n\n\n             ~~~~~~~~~***~~~~~~~~~~\n             Welcome to PlayStore!\n             ~~~~~~~~~***~~~~~~~~~~\n\nWhat would you like to do?\n\n"
-								+ "1. Upgrade to premium\n2. Purchase an item\n3. List all available content\n4. Show purchased content\n5. View comments on content\n6. Quit");
+				System.out.println("PlayStore Admin Menu\nWhat would you like to do?\n1. Upgrade to premium\n2. Purchase an item\n3. List all available content\n4. Show purchased content\n5. View comments on content\n6. Quit");
 				
 				menuString = stdin.readLine();
 				menuInput = Integer.parseInt(menuString);
