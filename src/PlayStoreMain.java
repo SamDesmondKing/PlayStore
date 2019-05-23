@@ -110,9 +110,13 @@ public class PlayStoreMain {
 
 				System.err.println("Invalid input, please enter a number between 1 and 5.\nReturning to main menu.");
 
-			} catch (Exception PurchaseException) {
+			} catch (PurchaseException purchaseException) {
 
 				System.err.println("Error - not enough funds in account (Purchase exception).");
+				
+			} catch (Exception e) {
+				
+				System.err.println("Error - returning to main menu");
 			}
 
 		} while (!quit);
