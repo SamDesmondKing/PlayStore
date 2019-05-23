@@ -32,7 +32,5 @@ public class PlayStore {
 				System.out.println(contents.get(i).getName());
 			}
 		}
-		
 	}
-	 	
 }

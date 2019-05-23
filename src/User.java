@@ -9,9 +9,6 @@ public class User {
 	private boolean premium;
 	ArrayList<Content> contentBought = new ArrayList<Content>();
 
-	// Do we need to be able to search a user's comment history?
-	// Should becomePremium throw a purchase exception?
-
 	//Constructor 1
 	public User(String ID, String name, String phoneNumber, double account) {
 		this.ID = ID;
@@ -79,5 +76,4 @@ public class User {
 			System.out.println(contentBought.get(i).getName());
 		}
 	}
-
 }
