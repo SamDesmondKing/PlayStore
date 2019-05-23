@@ -24,21 +24,15 @@ public class PlayStore {
 		}
 	}
 	
-	public void showClassContent() {
-		
-	}
-	
-	//Needs work - not there yet. 
-	public void showApplicationContent(String contentClass) {
+	//Takes name of class (String) as parameter and shows contents of that specific class type
+	public void showClassContent(String contentClass) {
 		
 		for (int i = 0; i < contents.size(); i++) {
-			if (contents.get(i).getClass().toString() == contentClass) {
+			if (contents.get(i).getClass().getName() == contentClass) {
 				System.out.println(contents.get(i).getName());
 			}
 		}
 		
 	}
-	
-
 	 	
 }

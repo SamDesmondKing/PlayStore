@@ -20,20 +20,18 @@ public class PlayStoreMain {
 		// Adding new applications
 		Application g1 = new Application("g1", "Pokemon", 5.3, "androidV4");
 		Application g2 = new Application("g2", "Pokemon", 5, "iOSV10");
+		
 		// a free app
 		Application app1 = new Application("app1", "Calendar", "androidV3");
 
 		
-		 store.addContent(b1); store.addContent(b2); store.addContent(b3);
-		 store.addContent(m1);
-		 store.addContent(g1); store.addContent(g2); store.addContent(app1);
-		
-		 
-		//Needs work - not working yet.
-		store.showApplicationContent("class Application");
-		
-		store.showContent();
-		
+		store.addContent(b1); 
+		store.addContent(b2); 
+		store.addContent(b3);
+		store.addContent(m1);
+		store.addContent(g1); 
+		store.addContent(g2); 
+		store.addContent(app1);
 		
 		// Adding new users and comments
 		User u1 = new User("u1", "John Doe", "0412000", 200);
@@ -69,38 +67,47 @@ public class PlayStoreMain {
 			System.out.println(e);
 		}
 		
+		store.showContent();
 
-		//u1.showContent();
+		g1.showComments();
+	
+		store.addContent(b1); 
+		store.addContent(b2); 
+		store.addContent(b3);
+		store.addContent(m1);
+		store.addContent(g1); 
+		store.addContent(g2); 
+		store.addContent(app1);
+		 
+		store.addUser(u1); 
+		store.addUser(u2); 
+		store.addUser(u3); 
+		store.addUser(u4);
+		 
 		
-
-		//store.showContent();
-
-		//g1.showComments();
-
-		/*
-		 * 
-		 * store.addContent(b1); store.addContent(b2); store.addContent(b3);
-		 * store.addContent(m1);
-		 * store.addContent(g1); store.addContent(g2); store.addContent(app1);
-		 * 
-		 * store.addUser(u1); store.addUser(u2); store.addUser(u3); store.addUser(u4);
-		 * 
-		 * 
-		 * // Simulating transactions, showing content, comments etc etc. // They can be
-		 * driven by menu input as well. u1.buyContent(b1); u1.buyContent(b3);
-		 * u1.buyContent(m1);
-		 * 
-		 * u4.buyContent(g1); u4.becomePremium(); u4.buyContent(m1);
-		 * 
-		 * u2.becomePremium(); u2.buyContent(b1); u2.buyContent(g1);
-		 * 
-		 * 
-		 * // to do: call a method to show all content items of a particular type, e.g.
-		 * book, magazine, application.
-		 * 
-		 * // other necessary code to test the required functionalities.
-		 * 
-		 */
-
+		/* Simulating transactions, showing content, comments etc etc. They can be
+		driven by menu input as well. */
+		
+		//These need try-catch blocks
+		
+		
+		//u1.buyContent(b1); 
+		//u1.buyContent(b3);
+		//u1.buyContent(m1);
+		
+		//u4.buyContent(g1); 
+		u4.becomePremium(); 
+		//u4.buyContent(m1);
+		
+		u2.becomePremium(); 
+		//u2.buyContent(b1); 
+		//u2.buyContent(g1);
+		
+		
+		//Call a method to show all content items of a particular type, e.g.
+		
+		store.showClassContent("Book");
+		store.showClassContent("Magazine");
+		
 	}
 }
