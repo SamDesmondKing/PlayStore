@@ -46,6 +46,7 @@ public class PlayStoreMain {
 		User u2 = new User("u2", "Mary Poppins", "0433191");
 		User u3 = new User("u3", "Dave Smith", "0413456", 1000);
 		User u4 = new User("u4", "Jackie Chan", "0417654");
+		User u5 = new User("u5", "Sam", "1234556", 0);
 		Comment comment1 = new Comment(u1, "This is a fantastic game!");
 		g1.addReview(comment1);
 		Comment comment2 = new Comment(u2, "I never liked this game!");
@@ -58,61 +59,62 @@ public class PlayStoreMain {
 		store.addUser(u2);
 		store.addUser(u3);
 		store.addUser(u4);
+		store.addUser(u5);
 
 		// -- Main Menu --
 
-		
 		BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
 
 		do {
-
 			try {
 
-				System.out.println("PlayStore Admin Menu\nWhat would you like to do?\n1. Upgrade to premium\n2. Purchase an item\n3. List all available content\n4. Show purchased content\n5. View comments on content\n6. Quit");
-				
+				System.out.println(
+						"PlayStore Admin Menu\nWhat would you like to do?\n1. Upgrade a user to premium\n2. Purchase an item for a user\n3. List all available content in store\n4. Show purchased content for a user\n5. View comments on content\n6. Quit");
+
 				menuString = stdin.readLine();
 				menuInput = Integer.parseInt(menuString);
-				
+
 				if (menuInput > 6 || menuInput <= 0) {
-					System.err.println("Invalid input, please enter a number between 1 and 5.\nReturning to main menu.");
-					
+					System.err
+							.println("Invalid input, please enter a number between 1 and 5.\nReturning to main menu.");
+
 				} else if (menuInput == 1) {
-					
+
 					System.out.println("Option 1");
-					
+
 				} else if (menuInput == 2) {
-					
+
 					System.out.println("Option 2");
 					
+					u5.buyContent(b1);
+					//Obviously add a way to make this custom
+
 				} else if (menuInput == 3) {
-				
+
 					System.out.println("Option 3");
-					
+
 				} else if (menuInput == 4) {
-					
+
 					System.out.println("Option 4");
-					
+
 				} else if (menuInput == 5) {
-					
+
 					System.out.println("Option 5");
-					
+
 				} else if (menuInput == 6) {
-					
+
 					quit = true;
 				}
 
 			} catch (NumberFormatException nfe) {
 
-				System.err.println(
-						"Invalid input, please enter a number between 1 and 5.\nReturning to main menu.");
-				
-			} catch (Exception ioe) {
+				System.err.println("Invalid input, please enter a number between 1 and 5.\nReturning to main menu.");
 
-				System.err.println("Problem in input, returning to main menu.");
-				System.err.println(ioe);
-				
-			} 
+			} catch (Exception PurchaseException) {
 
-		} while (!quit);	
+				System.err.println("Error - not enough funds in account (Purchase exception).");
+			}
+
+		} while (!quit);
 	}
 }
