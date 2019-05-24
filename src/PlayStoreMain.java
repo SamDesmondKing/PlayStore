@@ -70,7 +70,7 @@ public class PlayStoreMain {
 				
 				//Menu message
 				System.out.println(
-						"PlayStore Admin Menu\nWhat would you like to do?\n1. Upgrade a user to premium\n2. Purchase an item for a user\n3. List all available content in store\n4. Show purchased content for a user\n5. View comments on content\n6. Quit");
+						"\n-- PlayStore Admin Menu -- \nWhat would you like to do?\n1. Upgrade a user to premium\n2. Purchase an item for a user\n3. List all available content in store\n4. Show purchased content for a user\n5. View comments on content\n6. Quit");
 
 				menuString = stdin.readLine();
 				menuInput = Integer.parseInt(menuString);
