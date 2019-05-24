@@ -95,28 +95,41 @@ public class PlayStoreMain {
 					String userID = stdin.readLine().trim();
 					User thisUser = store.getUserByID(userID);
 					
-					System.out.println("User " + thisUser.getName() + " selected.\nPlease enter contentID");
+					System.out.println("User " + thisUser.getName() + " selected.\nBalance: $" + thisUser.getBalance() + "\nPlease enter contentID");
 					String contentID = stdin.readLine().trim();
 					Content thisContent = store.getContentByID(contentID);
 					
 					thisUser.buyContent(thisContent);
-					System.out.println("User " + thisUser.getName() + " has bought " + thisContent.getClass().getName() + ": " + thisContent.getName() +".");
+					System.out.println("User " + thisUser.getName() + " has bought " + thisContent.getClass().getName() + ": " + thisContent.getName() +".\nRemaining balance: $" + thisUser.getBalance());
 				
 				//Option 3 - List all contents in the store
 				} else if (menuInput == 3) {
 					
-					System.out.println("Option 3 selected - PlayStore contents:\n");
+					System.out.println("Option 3 selected - PlayStore contents:");
 					store.showContent();
-					System.out.println("-- end contents.");
-					
-
+					System.out.println("");
+				
 				//Option 4 - Show all purchased items of a user
 				} else if (menuInput == 4) {
-					System.out.println("Option 4");
+					
+					System.out.println("Option 4 selected - show all purchased items of a user.\nPlease enter userID");
+					String userID = stdin.readLine().trim();
+					User thisUser = store.getUserByID(userID);
+					
+					System.out.println("User " + thisUser.getName() + " has bought:");
+					thisUser.showContentBought();
+					System.out.println("");
 
 				//Option 5 - Show all comments on a piece of content
 				} else if (menuInput == 5) {
-					System.out.println("Option 5");
+					
+					System.out.println("Option 5 selected.\nPlease enter contentID");
+					String contentID = stdin.readLine().trim();
+					Content thisContent = store.getContentByID(contentID);
+					
+					System.out.println("Comments for " + thisContent.getName() + ":");
+					thisContent.showReviews();
+					System.out.println("");
 
 				//Option 6 - Quit
 				} else if (menuInput == 6) {
@@ -127,7 +140,7 @@ public class PlayStoreMain {
 				System.err.println("Invalid input, please enter a number between 1 and 5.\nReturning to main menu.");
 
 			} catch (PurchaseException purchaseException) {
-				System.err.println("Error - not enough funds in account.\nReturning to main menu.");
+				System.err.println("Error - not enough funds in account.\n Account balance is $" + purchaseException.getMaxAvailable() + "\nReturning to main menu.");
 				
 			} catch (Exception e) {
 				System.err.println("Error - returning to main menu");
