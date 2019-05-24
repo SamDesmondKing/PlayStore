@@ -15,30 +15,46 @@ public class User {
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		this.account = account;
-
 	}
 
+	
 	//Constructor 2
 	public User(String ID, String name, String phoneNumber) {
 		this.ID = ID;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		this.account = 500;
-
+	}
+	
+	
+	//Gets ID
+	public String getID() {
+		return this.ID;
+	}
+	
+	
+	//Gets name
+	public String getName() {
+		return this.name;
 	}
 
+	
 	//Setting user to premium status
 	public void becomePremium() {
-		if (this.account >= 100) {
+		if (this.account >= 100 && this.premium == false) {
 			this.account -= 100;
 			this.premium = true;
 			System.out.println("Premium transaction successfull");
 
+		} else if (this.premium == true) {
+			System.out.println("You are already a premium user!");
+			
 		} else {
-			System.out.println("Error - not enough funds in account. Please top up account manually.");
+			System.err.println("Error - not enough funds in account. Please top up account manually.\nReturning to main menu.");
 		}
 	}
 
+	
 	//Purchasing content
 	public void buyContent(Content purchase) throws PurchaseException {
 
@@ -50,6 +66,7 @@ public class User {
 			} else {
 				//Otherwise, deducting 80% of the content price from user account
 				this.account -= (purchase.getPrice() * 0.8);
+				System.out.println("Purchase successfull.");
 			}
 
 		//If user is not premium
@@ -60,6 +77,7 @@ public class User {
 			} else {
 				//Otherwise, deducting full price from user account
 				this.account -= purchase.getPrice();
+				System.out.println("Purchase successfull.");
 			}
 		}
 
@@ -70,6 +88,7 @@ public class User {
 		purchase.addDownload();
 	}
 
+	
 	//Iterates through the content array of this user and print the names of the content
 	public void showContentBought() {
 		for (int i = 0; i < contentBought.size(); i++) {

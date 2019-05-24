@@ -1,7 +1,7 @@
 import java.io.*;
 
 public class PlayStoreMain {
-
+	
 	public static void main(String[] args) {
 
 		PlayStore store = new PlayStore();
@@ -62,60 +62,74 @@ public class PlayStoreMain {
 		store.addUser(u5);
 
 		// -- Main Menu --
-
+		
 		BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
 
 		do {
 			try {
-
+				
+				//Menu message
 				System.out.println(
 						"PlayStore Admin Menu\nWhat would you like to do?\n1. Upgrade a user to premium\n2. Purchase an item for a user\n3. List all available content in store\n4. Show purchased content for a user\n5. View comments on content\n6. Quit");
 
 				menuString = stdin.readLine();
 				menuInput = Integer.parseInt(menuString);
-
+				
+				//Checking selection in range (other exceptions handled by try/catch)
 				if (menuInput > 6 || menuInput <= 0) {
 					System.err
-							.println("Invalid input, please enter a number between 1 and 5.\nReturning to main menu.");
+							.println("Invalid input, please enter a number between 1 and 6.\nReturning to main menu.");
 
+				//Option 1 - Upgrade a user to premium.
 				} else if (menuInput == 1) {
-
-					System.out.println("Option 1");
-
-				} else if (menuInput == 2) {
-
-					System.out.println("Option 2");
 					
-					u5.buyContent(b1);
-					//Obviously add a way to make this custom
+					System.out.println("Option 1 selected - upgrade a user to premium\nPlease enter userID");
+					String userID = stdin.readLine().trim();
+					User thisUser = store.getUserByID(userID);
+					thisUser.becomePremium();
 
+				//Option 2 - Purchase one item for one user
+				} else if (menuInput == 2) {
+					
+					System.out.println("Option 2 selected - purchase an item for a user.\nPlease enter userID");
+					String userID = stdin.readLine().trim();
+					User thisUser = store.getUserByID(userID);
+					
+					System.out.println("User " + thisUser.getName() + " selected.\nPlease enter contentID");
+					String contentID = stdin.readLine().trim();
+					Content thisContent = store.getContentByID(contentID);
+					
+					thisUser.buyContent(thisContent);
+					System.out.println("User " + thisUser.getName() + " has bought " + thisContent.getClass().getName() + ": " + thisContent.getName() +".");
+				
+				//Option 3 - List all contents in the store
 				} else if (menuInput == 3) {
+					
+					System.out.println("Option 3 selected - PlayStore contents:\n");
+					store.showContent();
+					System.out.println("-- end contents.");
+					
 
-					System.out.println("Option 3");
-
+				//Option 4 - Show all purchased items of a user
 				} else if (menuInput == 4) {
-
 					System.out.println("Option 4");
 
+				//Option 5 - Show all comments on a piece of content
 				} else if (menuInput == 5) {
-
 					System.out.println("Option 5");
 
+				//Option 6 - Quit
 				} else if (menuInput == 6) {
-
 					quit = true;
 				}
 
 			} catch (NumberFormatException nfe) {
-
 				System.err.println("Invalid input, please enter a number between 1 and 5.\nReturning to main menu.");
 
 			} catch (PurchaseException purchaseException) {
-
-				System.err.println("Error - not enough funds in account (Purchase exception).");
+				System.err.println("Error - not enough funds in account.\nReturning to main menu.");
 				
 			} catch (Exception e) {
-				
 				System.err.println("Error - returning to main menu");
 			}
 

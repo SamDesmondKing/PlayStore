@@ -6,7 +6,6 @@ public class PurchaseException extends Exception {
 	private double currentBalance;
 	
 	public PurchaseException(String reason, double currentBalance) {
-		
 		this.reason = reason;
 		this.currentBalance = currentBalance;
 	}
@@ -15,6 +14,7 @@ public class PurchaseException extends Exception {
 	public String getReason() {
 		return this.reason;
 	}
+	
 	
 	public double getMaxAvailable() {
 		return this.currentBalance;
