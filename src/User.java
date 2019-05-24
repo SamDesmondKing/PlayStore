@@ -46,7 +46,7 @@ public class User {
 		if (this.account >= 100 && this.premium == false) {
 			this.account -= 100;
 			this.premium = true;
-			System.out.println("Premium transaction successfull");
+			System.out.println("Premium transaction successful");
 
 		} else if (this.premium == true) {
 			System.out.println("They are already a premium user!");
@@ -68,7 +68,7 @@ public class User {
 			} else {
 				// Otherwise, deducting 80% of the content price from user account
 				this.account -= (purchase.getPrice() * 0.8);
-				System.out.println("Purchase successfull.");
+				System.out.println("Purchase successful.");
 			}
 
 		// If user is not premium
@@ -79,7 +79,7 @@ public class User {
 			} else {
 				// Otherwise, deducting full price from user account
 				this.account -= purchase.getPrice();
-				System.out.println("Purchase successfull.");
+				System.out.println("Purchase successful.");
 			}
 		}
 
